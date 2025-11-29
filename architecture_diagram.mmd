@@ -1,0 +1,45 @@
+graph TB
+    subgraph "User Interface"
+        A[Streamlit Web App<br/>streamlit_app.py]
+        B[Text Input<br/>Type/Upload/Sample]
+    end
+    
+    subgraph "Core Logic"
+        C[BedrockSummarizer Class<br/>main.py]
+        D[AWS Credentials<br/>Validation]
+    end
+    
+    subgraph "AWS Services"
+        E[Amazon Bedrock<br/>Runtime API]
+        F[Claude 3 Models<br/>Haiku/Sonnet/Opus]
+    end
+    
+    subgraph "Output"
+        G[Short Summary<br/>2-3 sentences]
+        H[Medium Summary<br/>1 paragraph]
+        I[Long Summary<br/>Detailed]
+        J[Download Results<br/>.txt file]
+    end
+    
+    B --> A
+    A --> D
+    D --> C
+    C --> E
+    E --> F
+    F --> E
+    E --> C
+    C --> G
+    C --> H
+    C --> I
+    G --> J
+    H --> J
+    I --> J
+    J --> A
+    
+    style A fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+    style C fill:#3B48CC,stroke:#232F3E,stroke-width:2px,color:#fff
+    style E fill:#527FFF,stroke:#232F3E,stroke-width:2px,color:#fff
+    style F fill:#8C4FFF,stroke:#232F3E,stroke-width:2px,color:#fff
+    style G fill:#2ECC71,stroke:#232F3E,stroke-width:2px,color:#fff
+    style H fill:#2ECC71,stroke:#232F3E,stroke-width:2px,color:#fff
+    style I fill:#2ECC71,stroke:#232F3E,stroke-width:2px,color:#fff

@@ -1,0 +1,62 @@
+Amazon Bedrock Text Summarizer - Project Structure
+==================================================
+
+Core Scripts:
+-------------
+📄 bedrock_summarizer.py      Main summarization script with BedrockSummarizer class
+                               - Accepts text input (file or built-in sample)
+                               - Generates short, medium, and long summaries
+                               - Comprehensive error handling
+                               - Structured output formatting
+
+📄 bedrock_setup.py            Connection test and model listing script
+                               - Verifies AWS credentials
+                               - Tests Bedrock connectivity
+                               - Lists available foundation models
+
+📄 example_usage.py            Example of using BedrockSummarizer as a module
+                               - Shows how to import and use the class
+                               - Demonstrates both methods
+
+Helper Scripts:
+--------------
+📄 setup_credentials.bat       Windows batch script to save AWS credentials
+📄 test_summarizer.bat         Quick test script for the summarizer
+
+Sample Data:
+-----------
+📄 sample_text.txt             Sample text about climate change for testing
+
+Configuration:
+-------------
+📄 requirements.txt            Python dependencies (boto3)
+📄 .env.example                Template for environment variables
+
+Documentation:
+-------------
+📄 README.md                   Complete project documentation
+📄 QUICKSTART.md               Quick start guide with troubleshooting
+📄 PROJECT_STRUCTURE.txt       This file
+
+Usage Flow:
+----------
+1. Set AWS credentials (setup_credentials.bat or manual)
+2. Test connection (python bedrock_setup.py)
+3. Run summarizer (python bedrock_summarizer.py sample_text.txt)
+
+Key Features:
+------------
+✓ Three summary lengths (short, medium, long)
+✓ Uses Claude 3 Haiku for fast, cost-effective summarization
+✓ Comprehensive exception handling
+✓ Clean, structured output format
+✓ Can be used as standalone script or imported module
+✓ Character and word count statistics
+✓ File input support
+
+Requirements:
+------------
+- Python 3.7+
+- boto3 (already installed)
+- AWS credentials with Bedrock access
+- IAM permissions: bedrock:InvokeModel, bedrock:ListFoundationModels
